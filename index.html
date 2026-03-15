@@ -1,0 +1,629 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>致我最爱的人</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="html5up-dimension/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="html5up-dimension/assets/css/noscript.css" /></noscript>
+		<style>
+			/* 自定义浪漫风格 */
+			body {
+				background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+				position: relative;
+			}
+			
+			#bg {
+				display: none;
+			}
+			
+			.logo {
+				background: #ff6b8b;
+			}
+			
+			.button.primary {
+				background: #ff6b8b;
+			}
+			
+			.button.primary:hover {
+				background: #ff5277;
+			}
+			
+			.love-heart {
+				animation: pulse 2s infinite;
+			}
+			
+			@keyframes pulse {
+				0% {
+					transform: scale(1);
+				}
+				50% {
+					transform: scale(1.1);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+			
+			.fade-in {
+				animation: fadeIn 1s ease-in;
+			}
+			
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			
+			/* 浮动爱心元素 */
+			.love-float {
+				position: fixed;
+				pointer-events: none;
+				z-index: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.love-float i {
+				color: #ff6b8b;
+				opacity: 0.5;
+			}
+			
+			.love-float-1 {
+				top: 10%;
+				left: 10%;
+				animation: float 15s ease-in-out infinite;
+			}
+			
+			.love-float-1 i {
+				font-size: 40px;
+			}
+			
+			.love-float-2 {
+				top: 15%;
+				right: 15%;
+				animation: float 18s ease-in-out infinite 2s;
+			}
+			
+			.love-float-2 i {
+				font-size: 30px;
+			}
+			
+			.love-float-3 {
+				bottom: 10%;
+				left: 15%;
+				animation: float 20s ease-in-out infinite 4s;
+			}
+			
+			.love-float-3 i {
+				font-size: 35px;
+			}
+			
+			.love-float-4 {
+				bottom: 15%;
+				right: 10%;
+				animation: float 16s ease-in-out infinite 6s;
+			}
+			
+			.love-float-4 i {
+				font-size: 25px;
+			}
+			
+			@keyframes float {
+				0% {
+					transform: translate(0, 0) scale(1) rotate(0deg);
+					opacity: 0.3;
+				}
+				25% {
+					transform: translate(30px, -30px) scale(1.2) rotate(5deg);
+					opacity: 0.6;
+				}
+				50% {
+					transform: translate(0, 30px) scale(1) rotate(0deg);
+					opacity: 0.3;
+				}
+				75% {
+					transform: translate(-30px, -20px) scale(0.9) rotate(-5deg);
+					opacity: 0.6;
+				}
+				100% {
+					transform: translate(0, 0) scale(1) rotate(0deg);
+					opacity: 0.3;
+				}
+			}
+			
+			/* 中心爱心效果 */
+			.love-center {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				pointer-events: none;
+				z-index: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				animation: pulse 4s ease-in-out infinite;
+			}
+			
+			.love-center i {
+					color: rgba(255, 107, 139, 0.3);
+					font-size: 300px;
+					filter: blur(1px);
+				}
+				
+				/* 音乐控制按钮 */
+				.music-control {
+					position: fixed;
+					top: 20px;
+					right: 20px;
+					width: 65px;
+					height: 60px;
+					background: linear-gradient(135deg, #ff6b8b, #ff5277);
+					color: white;
+					border: none;
+					cursor: pointer;
+					z-index: 10000;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					box-shadow: 0 6px 12px rgba(255, 107, 139, 0.4);
+					transition: all 0.3s ease;
+					clip-path: path('M32.5 10C42.5 0, 52.5 10, 52.5 27.5C52.5 47.5, 32.5 60, 32.5 60C32.5 60, 12.5 47.5, 12.5 27.5C12.5 10, 22.5 0, 32.5 10Z');
+				}
+				
+				.music-control:hover {
+					transform: scale(1.1);
+					box-shadow: 0 8px 16px rgba(255, 107, 139, 0.6);
+					background: linear-gradient(135deg, #ff5277, #ff385c);
+				}
+				
+				.music-control i {
+					font-size: 24px;
+					animation: rotate 3s linear infinite;
+				}
+				
+				@keyframes rotate {
+					from {
+						transform: rotate(0deg);
+					}
+					to {
+						transform: rotate(360deg);
+					}
+				}
+		</style>
+	</head>
+	<body class="is-preload">
+				<!-- 音乐控制按钮 -->
+				<button id="musicControl" class="music-control">
+					<i class="fa fa-music"></i>
+				</button>
+				
+				<!-- 浮动爱心元素 -->
+				<div class="love-float love-float-1">
+					<i class="fa fa-heart"></i>
+				</div>
+				<div class="love-float love-float-2">
+					<i class="fa fa-heart"></i>
+				</div>
+				<div class="love-float love-float-3">
+					<i class="fa fa-heart"></i>
+				</div>
+				<div class="love-float love-float-4">
+					<i class="fa fa-heart"></i>
+				</div>
+				
+				<!-- 中心爱心效果 -->
+				<div class="love-center">
+					<i class="fa fa-heart"></i>
+				</div>
+
+			<!-- Wrapper -->
+				<div id="wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo">
+						<span class="icon fa-heart love-heart"></span>
+					</div>
+					<div class="content">
+						<div class="inner">
+							<h1>我的挚爱</h1>
+							<p>致我最爱的人，这是我为你准备的小惊喜</p>
+						</div>
+					</div>
+					<nav>
+						<ul>
+							<li><a href="#declaration">爱的宣言</a></li>
+							<li><a href="#memories">我们的回忆</a></li>
+							<li><a href="#promises">爱的承诺</a></li>
+							<li><a href="#surprise">特别惊喜</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main">
+
+					<!-- 爱的宣言 -->
+					<article id="declaration">
+						<h2 class="major">爱的宣言</h2>
+						<span class="image main"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=romantic%20sunset%20with%20couple%20silhouette%20on%20beach&image_size=landscape_16_9" alt="浪漫场景" /></span>
+						<p class="fade-in">亲爱的，当我第一次遇见你，我的心跳就为你而加速。你的笑容如同阳光般温暖，你的声音如同天籁般动听。</p>
+						<p class="fade-in">与你相处的每一刻都是我生命中最美好的时光。无论是一起看电影、逛街，还是简单地坐在一起聊天，都让我感到无比幸福。</p>
+						<p class="fade-in">我想告诉你，你是我生命中最重要的人，我愿意用我的一生去呵护你、爱你。无论未来遇到什么困难，我都会陪在你身边，与你共同面对。</p>
+						
+						<h3 class="major mt-8">一个月纪念</h3>
+						<p class="fade-in">致我最爱的女孩:</p>
+						<p class="fade-in">这一个月，因为异地，我们隔着屏幕分享日常，隔着距离诉说思念，没能随时牵手拥抱，没能一起看遍朝夕风景，可我对你的爱意，从未因距离减半，反而在每一次牵挂、每一次期盼里，愈发浓烈坚定。</p>
+						<p class="fade-in">我知道异地恋很难，会有委屈，会有孤单，会有想见却不能见的遗憾，但我从来没怕过。因为是你，是那个让我满心欢喜、一眼心动的你，所以再远的距离，我都愿意奔赴；再难的时光，我都愿意坚守。</p>
+						<p class="fade-in">这一个月只是我们故事的开篇，往后的无数个日月，我想一直陪着你，熬过所有异地的难熬，跨过所有距离的阻碍，把每一份思念都变成相见的欢喜，把每一个平凡的日子，都过成只属于我们的浪漫。我爱你，不止这一个月，而是岁岁年年，朝朝暮暮。</p>
+					</article>
+
+					<!-- 我们的回忆 -->
+					<article id="memories">
+						<h2 class="major">我们的回忆</h2>
+						
+						<div class="row gtr-200">
+							<div class="col-4">
+								<span class="image fit">
+									<img src="3686f339c7e86a9cb7ef7e23ac9e4032.jpg" alt="我们的回忆" />
+								</span>
+							</div>
+							<div class="col-4">
+								<span class="image fit">
+									<img src="44c91fb906f556e1900d1090b76beb7b.jpg" alt="我们的回忆" />
+								</span>
+							</div>
+							<div class="col-4">
+								<span class="image fit">
+									<img src="606c4b2cc3421c60a1005a5cbaf1e871.jpg" alt="我们的回忆" />
+								</span>
+							</div>
+						</div>
+						<div class="row gtr-200 mt-6">
+							<div class="col-4">
+								<span class="image fit">
+									<img src="da1d854a3c87f3e16be9329b8531db50.jpg" alt="我们的回忆" />
+								</span>
+							</div>
+							<div class="col-4">
+								<span class="image fit">
+									<img src="eb05fd8647b6ff1bda4492af3804bfce.jpg" alt="我们的回忆" />
+								</span>
+							</div>
+							<div class="col-4">
+								<span class="image fit">
+									<img src="d0591ef75507168e9f27b16e48b7e665.jpg" alt="我们的回忆" />
+								</span>
+							</div>
+						</div>
+						<p class="mt-6 fade-in">每一张照片都承载着我们的美好回忆，每一个瞬间都让我更加爱你。我希望我们能创造更多这样的回忆，一起走过人生的每一个阶段。</p>
+					</article>
+
+					<!-- 爱的承诺 -->
+					<article id="promises">
+						<h2 class="major">爱的承诺</h2>
+						<span class="image main"><img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=romantic%20couple%20kissing%20under%20starry%20sky&image_size=landscape_16_9" alt="爱的承诺" /></span>
+						<ul class="alt mt-6">
+							<li class="fade-in"><i class="fa fa-heart mr-2 text-pink-500"></i> 我承诺永远对你忠诚，无论顺境还是逆境</li>
+							<li class="fade-in"><i class="fa fa-heart mr-2 text-pink-500"></i> 我承诺用心倾听你的每一个想法和感受</li>
+							<li class="fade-in"><i class="fa fa-heart mr-2 text-pink-500"></i> 我承诺在你需要的时候，永远在你身边</li>
+							<li class="fade-in"><i class="fa fa-heart mr-2 text-pink-500"></i> 我承诺与你一起创造更多美好的回忆</li>
+							<li class="fade-in"><i class="fa fa-heart mr-2 text-pink-500"></i> 我承诺用我的一生去爱你、呵护你</li>
+						</ul>
+					</article>
+
+					<!-- 特别惊喜 -->
+					<article id="surprise">
+						<h2 class="major">特别惊喜</h2>
+						<div class="text-center">
+							<div class="love-heart text-6xl text-red-500 mb-6">
+								<i class="fa fa-heart"></i>
+							</div>
+							<p class="text-2xl mb-4 fade-in">我爱你，永远永远</p>
+							<p class="mb-8 fade-in">你是我生命中最美好的存在，我希望我们能一起走过人生的每一个阶段，分享每一个快乐，度过每一个困难。</p>
+							<ul class="actions">
+								<li><button id="showConfetti" class="button icon solid fa-star">庆祝</button></li>
+								<li><a href="爱心视觉互动.html" class="button icon solid fa-heart">爱心互动</a></li>
+							</ul>
+						</div>
+					</article>
+
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">用我的心，献给我最爱的你 Maripat &copy; NIJIATI</p>
+				</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="html5up-dimension/assets/js/jquery.min.js"></script>
+			<script src="html5up-dimension/assets/js/browser.min.js"></script>
+			<script src="html5up-dimension/assets/js/breakpoints.min.js"></script>
+			<script src="html5up-dimension/assets/js/util.js"></script>
+			<script src="html5up-dimension/assets/js/main.js"></script>
+			<script>
+				// 页面加载完成后执行
+				document.addEventListener('DOMContentLoaded', function() {
+
+
+					// 庆祝按钮点击事件
+					document.getElementById('showConfetti').addEventListener('click', function() {
+						createConfetti();
+					});
+
+					// 创建烟花效果
+					function createFireworks() {
+						const colors = ['#ff6b8b', '#ff8fa3', '#ffb3c1', '#ffcad4', '#f4acb7', '#ff69b4', '#4ecdc4', '#45b7d1', '#ffcc00', '#ff6600'];
+						const container = document.querySelector('body');
+						
+						// 直接创建爆炸效果，简化实现
+						for (let i = 0; i < 10; i++) {
+							setTimeout(() => {
+								const explosionX = Math.random() * 80 + 10 + '%';
+								const explosionY = Math.random() * 60 + 20 + 'vh';
+								
+								// 爆炸效果
+								const explosionCount = Math.floor(Math.random() * 30) + 20;
+								for (let j = 0; j < explosionCount; j++) {
+									const explosion = document.createElement('div');
+									explosion.innerHTML = '<i class="fa fa-heart"></i>';
+									explosion.style.position = 'fixed';
+									explosion.style.color = colors[Math.floor(Math.random() * colors.length)];
+									explosion.style.fontSize = Math.random() * 15 + 10 + 'px';
+									explosion.style.left = explosionX;
+									explosion.style.top = explosionY;
+									explosion.style.opacity = '1';
+									explosion.style.zIndex = '9999';
+									explosion.style.pointerEvents = 'none';
+									explosion.style.textShadow = '0 0 8px ' + colors[Math.floor(Math.random() * colors.length)];
+									
+									// 计算随机方向和距离
+									const angle = Math.random() * Math.PI * 2;
+									const distance = Math.random() * 150 + 50;
+									const x = Math.cos(angle) * distance;
+									const y = Math.sin(angle) * distance;
+									
+									// 使用直接的动画
+									explosion.style.transition = 'all ' + (Math.random() * 1 + 0.5) + 's ease-out';
+									
+									container.appendChild(explosion);
+									
+									// 触发动画
+									setTimeout(() => {
+										explosion.style.transform = 'translate(' + x + 'px, ' + y + 'px) scale(0)';
+										explosion.style.opacity = '0';
+									}, 10);
+									
+									// 动画结束后移除元素
+									setTimeout(() => {
+										explosion.remove();
+									}, 2000);
+								}
+							}, i * 400);
+						}
+					}
+					
+					// 创建庆祝效果
+					function createConfetti() {
+						const colors = ['#ff6b8b', '#ff8fa3', '#ffb3c1', '#ffcad4', '#f4acb7', '#ff69b4'];
+						const container = document.querySelector('body');
+						
+						for (let i = 0; i < 150; i++) {
+							const heart = document.createElement('div');
+							heart.innerHTML = '<i class="fa fa-heart"></i>';
+							heart.style.position = 'fixed';
+							heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+							heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+							heart.style.left = Math.random() * 100 + '%';
+							heart.style.top = '-20px';
+							heart.style.opacity = '0.8';
+							heart.style.zIndex = '9999';
+							heart.style.pointerEvents = 'none';
+							heart.style.animation = 'heartFall ' + (Math.random() * 3 + 2) + 's ease-in-out forwards';
+							heart.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+							
+							container.appendChild(heart);
+							
+							// 动画结束后移除元素
+							setTimeout(() => {
+								heart.remove();
+							}, 5000);
+						}
+						
+						// 添加额外的爆炸效果
+						setTimeout(() => {
+							for (let i = 0; i < 50; i++) {
+								const explosion = document.createElement('div');
+								explosion.innerHTML = '<i class="fa fa-heart"></i>';
+								explosion.style.position = 'fixed';
+								explosion.style.color = colors[Math.floor(Math.random() * colors.length)];
+								explosion.style.fontSize = Math.random() * 15 + 5 + 'px';
+								explosion.style.left = '50%';
+								explosion.style.top = '50%';
+								explosion.style.opacity = '0.8';
+								explosion.style.zIndex = '9999';
+								explosion.style.pointerEvents = 'none';
+								explosion.style.animation = 'explosion ' + (Math.random() * 1 + 0.5) + 's ease-out forwards';
+								
+								const angle = Math.random() * Math.PI * 2;
+								const distance = Math.random() * 200 + 50;
+								explosion.style.setProperty('--angle', angle);
+								explosion.style.setProperty('--distance', distance);
+								
+								container.appendChild(explosion);
+								
+								// 动画结束后移除元素
+								setTimeout(() => {
+									explosion.remove();
+								}, 2000);
+							}
+						}, 500);
+						
+						// 添加烟花效果
+						setTimeout(() => {
+							createFireworks();
+						}, 1000);
+					}
+
+					// 添加爱心特效
+					function createHeart(x, y) {
+						const heart = document.createElement('div');
+						heart.className = 'heart';
+						heart.innerHTML = '<i class="fa fa-heart"></i>';
+						heart.style.left = x + 'px';
+						heart.style.top = y + 'px';
+						document.body.appendChild(heart);
+						
+						// 动画结束后移除元素
+						setTimeout(() => {
+							heart.remove();
+						}, 1000);
+					}
+
+					// 鼠标移动事件
+					document.addEventListener('mousemove', function(e) {
+						// 限制爱心生成频率
+						if (!this.lastHeartTime || Date.now() - this.lastHeartTime > 50) {
+							createHeart(e.clientX, e.clientY);
+							this.lastHeartTime = Date.now();
+						}
+					});
+					
+					// 音乐控制按钮
+					document.getElementById('musicControl').addEventListener('click', function() {
+						const audio = document.getElementById('loveSong');
+						if (audio.paused) {
+							audio.play();
+							this.innerHTML = '<i class="fa fa-music"></i>';
+						} else {
+							audio.pause();
+							this.innerHTML = '<i class="fa fa-pause"></i>';
+						}
+					});
+
+					// 添加下落动画样式
+					const style = document.createElement('style');
+					style.textContent = `
+						@keyframes fall {
+							0% {
+								transform: translateY(0) rotate(0deg);
+								opacity: 0.8;
+							}
+							100% {
+								transform: translateY(100vh) rotate(360deg);
+								opacity: 0;
+							}
+						}
+						
+						@keyframes heartFall {
+							0% {
+								transform: translateY(0) rotate(0deg) scale(0);
+								opacity: 0;
+							}
+							10% {
+								transform: translateY(20px) rotate(10deg) scale(1);
+								opacity: 0.8;
+							}
+							90% {
+								transform: translateY(80vh) rotate(350deg) scale(1);
+								opacity: 0.8;
+							}
+							100% {
+								transform: translateY(100vh) rotate(360deg) scale(0.5);
+								opacity: 0;
+							}
+						}
+						
+						@keyframes explosion {
+							0% {
+								transform: translate(-50%, -50%) scale(0);
+								opacity: 0.8;
+							}
+							50% {
+								transform: translate(calc(-50% + var(--distance) * cos(var(--angle))), calc(-50% + var(--distance) * sin(var(--angle)))) scale(1.2);
+								opacity: 0.8;
+							}
+							100% {
+								transform: translate(calc(-50% + var(--distance) * cos(var(--angle))), calc(-50% + var(--distance) * sin(var(--angle)))) scale(0);
+								opacity: 0;
+							}
+						}
+						
+						@keyframes fireworkLaunch {
+							0% {
+								transform: translateY(0);
+								opacity: 1;
+							}
+							100% {
+								transform: translateY(calc(-1 * var(--height)));
+								opacity: 0;
+							}
+						}
+						
+						@keyframes fireworkExplosion {
+							0% {
+								transform: translate(0, 0) scale(0);
+								opacity: 1;
+							}
+							100% {
+								transform: translate(var(--x), var(--y)) scale(0);
+								opacity: 0;
+							}
+						}
+						
+						.heart {
+							position: fixed;
+							color: #ff6b8b;
+							transform: translate(-50%, -50%);
+							pointer-events: none;
+							z-index: 9999;
+							animation: heart 1s ease-out forwards;
+						}
+						
+						@keyframes heart {
+							0% {
+								scale: 0;
+								opacity: 0.8;
+								transform: translate(-50%, -50%) rotate(0deg);
+							}
+							50% {
+								scale: 1.2;
+								opacity: 0.6;
+								transform: translate(-50%, -50%) rotate(5deg);
+							}
+							100% {
+								scale: 0.8;
+								opacity: 0;
+								transform: translate(-50%, -50%) rotate(-5deg) translateY(-20px);
+							}
+						}
+					`;
+					document.head.appendChild(style);
+				});
+			</script>
+			
+			<!-- 音乐元素 -->
+			<audio id="loveSong" src="i.mp3" preload="auto" autoplay loop>
+				您的浏览器不支持音频元素。
+			</audio>
+
+	</body>
+</html>
